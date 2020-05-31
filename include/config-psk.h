@@ -58,7 +58,8 @@
 #define MBEDTLS_SSL_TLS_C
 
 /* Save RAM at the expense of ROM */
-#define MBEDTLS_AES_ROM_TABLES
+// This has no apparent effect on esp8266, as ROM_TABLES are stored in .rodata (which is also placed in RAM)
+// #define MBEDTLS_AES_ROM_TABLES
 
 /* Save some RAM by adjusting to your exact needs */
 #define MBEDTLS_PSK_MAX_LEN 16 /* 128-bits keys are generally enough */
@@ -68,7 +69,7 @@
  * is the "platform_entropy_poll" source, but you may want to add other ones
  * Minimum is 2 for the entropy test suite.
  */
-#define MBEDTLS_ENTROPY_MAX_SOURCES 2
+#define MBEDTLS_ENTROPY_MAX_SOURCES 1
 
 /*
  * Use only CCM_8 ciphersuites, and
