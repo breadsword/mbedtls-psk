@@ -1,0 +1,16 @@
+{
+    "name": "mbedtls-psk",
+    "version": "0.1",
+    "description": "mbedtls clone that only support tls-psk on esp8266",
+    "Repository": {
+        "type": "git",
+        "url": "https://github.com/breadsword/mbedtls-psk.git"
+    },
+    "license": "Apache-2.0",
+    "platforms": "espressif8266",
+    "build": {
+        "srcDir": "library",
+        "includeDir": "include",
+        "flags": "-DMBEDTLS_CONFIG_FILE='\"config-psk.h\"'"
+    }
+}
